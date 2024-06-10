@@ -1,0 +1,167 @@
+Delivered-To: sthefanysamaniego@gmail.com
+Received: by 2002:a05:6200:3f92:b0:542:b58a:ce89 with SMTP id ju18csp2557211qnb;
+        Mon, 8 Apr 2024 11:37:18 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFIKmHVz7Xf2ZBrAUI/Lun2diRlP2oh5SVYdSkClnc+R89GOTK9jWy/PaFalepucdCLqACa
+X-Received: by 2002:a05:6214:906:b0:69b:93b:ed41 with SMTP id dj6-20020a056214090600b0069b093bed41mr5457566qvb.41.1712601438060;
+        Mon, 08 Apr 2024 11:37:18 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1712601438; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=i02RcXnZfJkbWQTKPQois8GOb3rrrh5WVxDUgXyiOjRJFuULMRFnKFJeVWxf4Gb/iS
+         P1foAR3MJBKibVlHs5XVgrYzNnmJL91+GuCuv6k/MAWw7Ln8Wd0wFL3Jn3DXLzvkB+EE
+         WzRgtxmXHu3ghSTRG8/pAIuiWl7gutQNwdeLjarS/1m9WVnC8CYZByiSboYvGCU+kFx3
+         US2AZj7HAPpklAImd6Ggm6rvhhfmZ8aAWAEK+7GNLp1laLRMUiKoOABkGyjKb68w4/wb
+         nNjPbw/t4ZYyNjewb5T1c3LSgUQ2gVpSiLcsVp7rfbUfh7otHOZTT4uBa2ymOwvJhd+W
+         wYbQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:content-language:accept-language:message-id:date
+         :thread-index:thread-topic:subject:to:from:dkim-signature;
+        bh=hQWI+CSC8VvlfY1IeYvIXFT7QZT6WyqaIg2KaCSnWe0=;
+        fh=LTAKLdURutBHiVuawSGpM2zw9CcNcmtSMMU7MORK+vM=;
+        b=dM9A/Hg/qH0PExKjGjlvnWX4/g311SxN62J4JOdzrHZB0rCds1Go/UiGyMMnQ7iBdu
+         gFNwN+/uZFdyYOIQD2zZ7PxqyKbV3PBhejyQWZWtabrZOpvLPfgIMIjPDiAffmzIR2b3
+         BiQO0+jPtQgzVGn+4I7fVEV37T/j4WDEJ8m9+CibO/O3F47k3Cby1hip5UM/a/1rJx4Y
+         8NHLv0aOPNsF61gnxRPwTPygciLwI2CZDxOSNyIDAT2eRrmXUFG2Dxhc+XxWm8As67R/
+         mBVl2T6DcVJ1bEq6xJuT/Dekun6iJCTZ1BkkUVPdLMX0HL2f30aW0hAfJEM1ZPaRyLfg
+         TfKA==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@feevale.br header.s=selector2 header.b=tMWmaXyF;
+       arc=pass (i=1 spf=pass spfdomain=feevale.br dkim=pass dkdomain=feevale.br dmarc=pass fromdomain=feevale.br);
+       spf=pass (google.com: domain of 0411476@feevale.br designates 2a01:111:f403:c102::1 as permitted sender) smtp.mailfrom=0411476@feevale.br;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=feevale.br
+Return-Path: <0411476@feevale.br>
+Received: from SA9PR02CU001.outbound.protection.outlook.com (mail-southcentralusazlp170110001.outbound.protection.outlook.com. [2a01:111:f403:c102::1])
+        by mx.google.com with ESMTPS id qf5-20020a0562144b8500b0069b1f23404dsi783243qvb.561.2024.04.08.11.37.17
+        for <sthefanysamaniego@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 08 Apr 2024 11:37:18 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0411476@feevale.br designates 2a01:111:f403:c102::1 as permitted sender) client-ip=2a01:111:f403:c102::1;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@feevale.br header.s=selector2 header.b=tMWmaXyF;
+       arc=pass (i=1 spf=pass spfdomain=feevale.br dkim=pass dkdomain=feevale.br dmarc=pass fromdomain=feevale.br);
+       spf=pass (google.com: domain of 0411476@feevale.br designates 2a01:111:f403:c102::1 as permitted sender) smtp.mailfrom=0411476@feevale.br;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=feevale.br
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=QlbUcZ0GZsXL/clcok2SzJykWBtIYbwXb64VwWreVISxWMl4l2R2UyjX0818qzgM/ANWYwx5ONyt9GLyEursP3mOKMNVPDTal2sLmoJOWk0/kkAgUELjHdkp/i74MGO2LLhpSurkUSqMAtYpeMlMucuOYuYZzqIlYDyEE9ur98vJcCFWNZ21dxWLxAC520fjK1KX7cB0ablitiCQ7/W01gAOf6Wxvjw3c9/em5JbX7QQz+5g6bsQWXstR6TogVA3uWK+NuSuEP+tBbGPUd12mFOkPTrN+w+PHmh3qGth6UxQ8VspsJeWGy454nmOef619Kx11paVoa6HsPsxmSWPiA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=hQWI+CSC8VvlfY1IeYvIXFT7QZT6WyqaIg2KaCSnWe0=;
+ b=D3v7ztYOW75Nv8g9Qs5/kYKmBsNOfb9akHshXSTnl/aYJ8CpwBrSm+VtgTsU4cD9fUYSddmQqxYMvmgsD52zlt+TO1x2QctEV6gecZ2LZiVhscPuFbsf7p7N+yuf/hlZJEQqb3a92l2BhzmwDznZAK/WzGU5K441TX34O3IKENgbX/nzKirmSPLDdTWspA+LAsKrafvBBXynHCj0CfepIb4Ziq5AjoSJAbbbdsdQAbek0BgAi++TkyUOBfVax2g+Pkk1JCicv+cAMX2BoqFs7iaYDf1v/MtU7PW6QRVxhsG4IUexXj43CEdpBINEGe1WIBG28jLMnpi2eO05PXncRA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=feevale.br; dmarc=pass action=none header.from=feevale.br;
+ dkim=pass header.d=feevale.br; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=feevale.br;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=hQWI+CSC8VvlfY1IeYvIXFT7QZT6WyqaIg2KaCSnWe0=;
+ b=tMWmaXyFifJnU25G4cv0e8e5tElAMKJL0VIvQLgNkzTi2bFVxKPzOuM0wwp144L13I29KonOa6qI/f7BJBgKg1dkab0K1OlSa4Gs6g+Uv6arbBIDnhWMTbGxy3oWCy1G7Pi1x4B9asDrO7D+ohY61n1QFKOiC0TLW6xufPXtN+lSlcNjjvHV1sg5ii+ml+FUlK3mrz2jzvC+WVEZJQNEqE5V8zss3Y/J+X/g3dePS4l0V4O0ShhHv2HtRl5LZjyXoDsTZcG3prBb2F3wsrvEkO0sG2oqTQnFAHZ1cVTRJlKFdJMu7bXtj9RiTm9Alq+xBTAvf7nJyFW0cvytgPobzA==
+Received: from SJ0PR05MB7657.namprd05.prod.outlook.com (2603:10b6:a03:2e9::10)
+ by DM4PR05MB9208.namprd05.prod.outlook.com (2603:10b6:8:8a::8) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.7409.46; Mon, 8 Apr 2024 18:37:14 +0000
+Received: from SJ0PR05MB7657.namprd05.prod.outlook.com
+ ([fe80::d79d:209f:17f2:f84a]) by SJ0PR05MB7657.namprd05.prod.outlook.com
+ ([fe80::d79d:209f:17f2:f84a%7]) with mapi id 15.20.7409.042; Mon, 8 Apr 2024
+ 18:37:13 +0000
+From: =?iso-8859-1?Q?STH=C9FANY_SAMANIEGO_ALBUQUERQUE?= <0411476@feevale.br>
+To: "sthefanysamaniego@gmail.com" <sthefanysamaniego@gmail.com>
+Subject: =?iso-8859-1?Q?Estou_almo=E7ando_com_a_Maite_no_KingK=E3o?=
+Thread-Topic: =?iso-8859-1?Q?Estou_almo=E7ando_com_a_Maite_no_KingK=E3o?=
+Thread-Index: AdqJ47Yn3V9j50Q0RKiHFZ5Da0Pu2Q==
+Date: Mon, 8 Apr 2024 18:37:13 +0000
+Message-ID:
+ <SJ0PR05MB76574DF0B07A366727DD15228D002@SJ0PR05MB7657.namprd05.prod.outlook.com>
+Accept-Language: pt-BR, en-US
+Content-Language: pt-BR
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: SJ0PR05MB7657:EE_|DM4PR05MB9208:EE_
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ JlFIVYSeHcKtT9Xpx/q0GJGhaOeGq2bQxzLkzMNjnkWDgdGmEVjgW7PtIQXH/ulw32MyNR+bHMAmmHoVPI7TrWKYMj3vpbk9E2LnEK0dnKLZGNYq1SN6fOaKTHZsszjnf/pCVe9h4qZn/2Tmb8SKwihdYjQ3vYWXeUn9+ndzes+iEfzFfTci9gv2HEuxcCNRqALWi9BokNIO/HKrRYQKl6rhBrftTQ+pLJtNYJ8JkP7yNHb65Gp6KnnASFJDv+QRDXKHi7hsqUxu34E+wADftA2ToT1HX19EFdXNr8L3OrhKQA81IX7svFgylXh5SvErj33RStp60PdlxRu4DxnRgF6lVL0IZk9Trzfu5i/7g/L6XE/Mqn4AnDM9DzrHpvHkuJgQyXyYxj0cWMRogsgjZ553Z+CtZRYvGK2HN8NFTPT04aTdN/EEBFekfnmllaC8SGwdTxpKg6Au8y9Iq4cGcqGE/gfQrKc9WITvJkV1wH29n0R/sLuXUQRASrF0bTlmaOkDc8/TjyhQqBWXBThyXrbd3wtFnqY3iCbOXSRiuj+u0Zt4+QZ1ozrYgHalNb+JiRNpy+JofxEX98/oF5yXOq4joemnyz68iD/D/7c1S8C9bsyHYIQBV37fZQ8j0B87XiVUXr5eROyLBFrI9+5f60IjYwj5G/QK5dckMNuZKbc=
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:pt;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:SJ0PR05MB7657.namprd05.prod.outlook.com;PTR:;CAT:NONE;SFS:(13230031)(376005)(41320700004)(1800799015)(366007);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?iso-8859-1?Q?YRLlQjvJYTQnSBzwXgatpOJUQ+Q3Dc3zWXg2TrWkj2TiTsgnkVR+rPSHil?=
+ =?iso-8859-1?Q?U5v1kL7lx53n1Tgh92ub0B+pgos3NqQSPZ9hsIqfluiw9x3IC74Sn5LwVA?=
+ =?iso-8859-1?Q?wGOugqymnNfc8gWxtawreDj7jXC+41sWWPpQmwZtHSuKtUrTLgvOq9UU2G?=
+ =?iso-8859-1?Q?HXjVBNUvQuQX1ohCLpBf4UOq+FDshK2aLbTz05G+ITozEqUM7ttuc8Z9cT?=
+ =?iso-8859-1?Q?giBZ2lIIDwOLhIcq+W7X5H6pp9dFTRAsn2R+mDiNfoA57ZUm7z1o4WiNL/?=
+ =?iso-8859-1?Q?VzBEsbgKuq6yAkfxnvnEPn5+po1/KMvX4DB73PP66lao4qNP79i5Li7EYu?=
+ =?iso-8859-1?Q?/D6k9Pq6O25mLcze1miQ99T3IFqpS2oDFuTYnSRViPKqtuXC8WEsc+/uwc?=
+ =?iso-8859-1?Q?tGCk/lFY/M4C3cA0UUPRHNGXp6R/SdeHVPhDHP/zH0qdwduJCBeCrhbuBT?=
+ =?iso-8859-1?Q?PF47dpMPe6DiSy1lQSyDmrLh4lZr5NLd9qGxX0a7puoxFMv0vpY1RQp0E3?=
+ =?iso-8859-1?Q?LvT34kHpEMKsWIk8NVQFFuKJrugRUk2b362tBliVIhPtqHRQeg8lUEq/XG?=
+ =?iso-8859-1?Q?cbxQLhZ2CrmexBgmspTzk0GABk252BSAqX/nj5t4kUeBxXzn75mSWavGPi?=
+ =?iso-8859-1?Q?8iAeEruizu8dEYiJOFAAHa5bxKIqvSNeNmbFYvI4mKv3xK5N/0cdUMmBhF?=
+ =?iso-8859-1?Q?smTiRA8dVUdlixvjB1uWc47eryFzRKYMhpzTztmph7HFRAymh7ZjXMIUGT?=
+ =?iso-8859-1?Q?p/vNgvVcGADA9Wo8hJf80JHzfdygHOkGCTxnQw3aZDCljmNo12S72d54vL?=
+ =?iso-8859-1?Q?FwXA3xuEeQT54aDGqCZjWyo2vsPkve6imm6XU+UjM/owMzsiNyaK48PMuj?=
+ =?iso-8859-1?Q?O+IE3jKhTXDBmiEo82viabWi59NojjUXD85UEwbFrp4R8DAn6zk5X+ohF/?=
+ =?iso-8859-1?Q?tnY4cEHPPxSMfi7MygMboXll+q7YhVcoFCQWjJcohZF2vbNiVrr6v4sG9C?=
+ =?iso-8859-1?Q?cNXma7ghzba+iSG2z4SFQYBf2dsd+RaYNZRhVPaadk940BTFa+9u18erLs?=
+ =?iso-8859-1?Q?R65l0OVr3wP8bDHGrZbZjKkC86LLr8Z6ogNTalWe9+24LZu2rWZyz/PuWM?=
+ =?iso-8859-1?Q?CWL8hqPCFvQKJ2xE4aevRhYUDiRTmXS1pMa9gXl9xSvJAfgkm8g1V4M9Ij?=
+ =?iso-8859-1?Q?ahqDnJiBYMq3YTtrFmsW4PQkd6imZE/bAPIWx7q0hAoiNaaLabs3n8iOdh?=
+ =?iso-8859-1?Q?EyI46VbVU6jYFs3JKk1LMHYKOXArf3GxjdURON2Fjs5UHjt57Oy1xHKuhi?=
+ =?iso-8859-1?Q?kqyvGy0+Mtb4Or2OTVfzBqNR6qAguZcyCHhSrWSbwgy896Wdw2yfK8Kakt?=
+ =?iso-8859-1?Q?So4M4S3TLI87jlJH5EEllSltpRR26xfBYwc5+ri+gx4Rz/XlfAdaCHuoIb?=
+ =?iso-8859-1?Q?ch0aO45QVP6JVHtSGK1q0e62uDDlkhJBgEU8zqH7zAYGrO7KirOZHoWgZv?=
+ =?iso-8859-1?Q?1HVufU/tCdULi29dyDKNGYM+zPT5bIhfPYA07Yg8BfPGCnTVRlaFbgFqe7?=
+ =?iso-8859-1?Q?SrQtDkY=3D?=
+Content-Type: multipart/alternative;
+	boundary="_000_SJ0PR05MB76574DF0B07A366727DD15228D002SJ0PR05MB7657namp_"
+MIME-Version: 1.0
+X-OriginatorOrg: feevale.br
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: SJ0PR05MB7657.namprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 2d1ed87b-79dc-490e-b712-08dc57fae895
+X-MS-Exchange-CrossTenant-originalarrivaltime: 08 Apr 2024 18:37:13.4755
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: f88fadd5-7343-41cb-a43e-ceaf8b13d15d
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: K4pWvW/sFjkA07wZ5xjvtgN3eWq2OMF2UQN6x1UJD1+xiu/tDrRrObUAHcoTH9VnSSwgB+jGg8RciHaqBWzKFw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM4PR05MB9208
+
+--_000_SJ0PR05MB76574DF0B07A366727DD15228D002SJ0PR05MB7657namp_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Ol=E1 Lira, aqui =E9 o c=F3digo Python
+
+O faturamento da loja foi de R$1500
+
+Vendemos 10 produtos
+
+O ticket M=E9dio foi de R$150.0
+
+Abs,
+
+C=F3digo Python
+
+--_000_SJ0PR05MB76574DF0B07A366727DD15228D002SJ0PR05MB7657namp_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+</head>
+<body>
+<p>Ol=E1 Lira, aqui =E9 o c=F3digo Python</p>
+<p>O faturamento da loja foi de R$1500</p>
+<p>Vendemos 10 produtos</p>
+<p>O ticket M=E9dio foi de R$150.0</p>
+<p>Abs,</p>
+<p>C=F3digo Python</p>
+</body>
+</html>
+
+--_000_SJ0PR05MB76574DF0B07A366727DD15228D002SJ0PR05MB7657namp_--
